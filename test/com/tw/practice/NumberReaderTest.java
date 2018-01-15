@@ -29,4 +29,14 @@ public class NumberReaderTest {
         setInputStream("123d");
         reader.read();
     }
+
+    /**
+     * 不是4位数
+     * @throws Exception
+     */
+    @Test(expected = Exception.class)
+    public void shouldThrowExceptionForNon4DigitInput() throws Exception{
+        setInputStream("123");
+        reader.read();
+    }
 }
